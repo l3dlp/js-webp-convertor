@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apple-inspired styles */
+.apple-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .apple-card {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.apple-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
+}
+
+.dark .apple-card:hover {
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+}
+
+.apple-button {
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.apple-slider {
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: #e0e0e0;
+    outline: none;
+}
+
+.apple-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #0071e3;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.dark .apple-slider {
+    background: #444;
+}
+
+.dark .apple-slider::-webkit-slider-thumb {
+    background: #0077ed;
+}
+
+.progress-animation {
+    animation: progress-pulse 2s infinite;
+}
+
+@keyframes progress-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.theme-toggle {
+    position: relative;
+    width: 52px;
+    height: 26px;
+}
+
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .theme-slider {
+    background-color: #0071e3;
+}
+
+input:checked + .theme-slider:before {
+    transform: translateX(26px);
+}
+
+.icon-sun, .icon-moon {
+    position: absolute;
+    top: 6px;
+    font-size: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.icon-sun {
+    left: 6px;
+    color: #fff;
+    opacity: 0;
+}
+
+.icon-moon {
+    right: 6px;
+    color: #333;
+}
+
+input:checked ~ .icon-sun {
+    opacity: 1;
+}
+
+input:checked ~ .icon-moon {
+    opacity: 0;
+}
+
+/* RTL language support */
+body.rtl {
+    text-align: right;
+}
+
+body.rtl .flex-row {
+    flex-direction: row-reverse;
+}
+
+body.rtl .icon-sun {
+    right: 6px;
+    left: auto;
+}
+
+body.rtl .icon-moon {
+    left: 6px;
+    right: auto;
+}
+
+body.rtl input:checked + .theme-slider:before {
+    transform: translateX(-26px);
+}
+
+body.rtl .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+body.rtl .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+body.rtl .ml-4 {
+    margin-left: 0;
+    margin-right: 1rem;
+}
+
+body.rtl .text-right {
+    text-align: left;
+}
+
+body.rtl .text-left {
+    text-align: right;
+}
