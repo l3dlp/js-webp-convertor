@@ -22,7 +22,7 @@ A modern, client-side web application that converts various image formats to Web
 
 ## 🖥️ Live Demo
 
-Try it now: [WebP Image Converter](https://l3dlp.github.io/js-webp-convertor/)
+Try it now: [WebP Image Converter](https://clh.agency/lab/js-webp-convertor/)
 
 ## 📋 How It Works
 
